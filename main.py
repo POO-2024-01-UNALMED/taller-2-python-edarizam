@@ -1,6 +1,6 @@
 class Asiento:
     #Atriutos de instancia
-    def ___init__(self, color, precio, registro):
+    def __init__(self, color, precio, registro):
         self.color = color
         self.precio = precio
         self.registro = registro
@@ -8,28 +8,26 @@ class Asiento:
     #Método de instancia
     def cambiarColor(self, color):
 
-        color = color.lower()
-
         if (color == "rojo") or (color == "verde") or (color == "amarillo") or (color == "blanco") or (color == "negro"):
             self.color = color
-
 
 class Motor:
 
     #Atriutos de instancia
     def __init__(self, numeroCilindros, tipo, registro):
-        self.registro = registro
         self.numeroCilindros = numeroCilindros
         self.tipo = tipo
+        self.registro = registro
 
     #Métodos de instancia
     def cambiarRegistro(self, registro):
         self.registro = registro
     
+    #Corregido
     def asignarTipo(self, tipo):
         tipo = tipo.lower()
         if (tipo == "electrico") or (tipo == "gasolina"):
-            tipo.self = tipo
+            self.tipo = tipo
 
 class Auto:
     #Atributos estáticos
@@ -45,23 +43,18 @@ class Auto:
         self.registro = registro
     
     def cantidadAsientos(self):
+        totalAsientos = 0
         for asiento in self.asientos:
-            if type(asiento) == type(self.asientos):
-                i+=1
+            if type(asiento) == Asiento:
+                totalAsientos+=1
         
-        return i
+        return totalAsientos
     
     def verificarIntegridad(self):
         for asiento in self.asientos:
-            if type(asiento) == type(self.asientos):
-                if (Asiento.registro == self.registro) and (Motor.registro == self.registro):
+            if type(asiento) == Asiento:
+                if (asiento.registro == self.registro) and (Motor.registro == self.registro):
                     return "Auto original"
                 else:
                     return "Las piezas no son originales"
-                
-            
-
-
-
-
     
