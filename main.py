@@ -23,7 +23,6 @@ class Motor:
     def cambiarRegistro(self, registro):
         self.registro = registro
     
-    #Corregido
     def asignarTipo(self, tipo):
         tipo = tipo.lower()
         if (tipo == "electrico") or (tipo == "gasolina"):
@@ -53,7 +52,7 @@ class Auto:
     def verificarIntegridad(self):
         for asiento in self.asientos:
             if type(asiento) == Asiento:
-                if (asiento.registro == self.registro) and (Motor.registro == self.registro):
+                if (asiento.registro == self.registro) and (self.motor.registro == self.registro):
                     return "Auto original"
                 else:
                     return "Las piezas no son originales"
