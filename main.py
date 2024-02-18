@@ -1,0 +1,67 @@
+class Asiento:
+    #Atriutos de instancia
+    def ___init__(self, color, precio, registro):
+        self.color = color
+        self.precio = precio
+        self.registro = registro
+
+    #Método de instancia
+    def cambiarColor(self, color):
+
+        color = color.lower()
+
+        if (color == "rojo") or (color == "verde") or (color == "amarillo") or (color == "blanco") or (color == "negro"):
+            self.color = color
+
+
+class Motor:
+
+    #Atriutos de instancia
+    def __init__(self, numeroCilindros, tipo, registro):
+        self.registro = registro
+        self.numeroCilindros = numeroCilindros
+        self.tipo = tipo
+
+    #Métodos de instancia
+    def cambiarRegistro(self, registro):
+        self.registro = registro
+    
+    def asignarTipo(self, tipo):
+        tipo = tipo.lower()
+        if (tipo == "electrico") or (tipo == "gasolina"):
+            tipo.self = tipo
+
+class Auto:
+    #Atributos estáticos
+    cantidadCreados = 0
+
+    #Atributos de instancia
+    def __init__(self, modelo, precio, asientos, marca, motor, registro):
+        self.modelo = modelo
+        self.precio = precio
+        self.asientos = asientos
+        self.marca = marca
+        self.motor = motor
+        self.registro = registro
+    
+    def cantidadAsientos(self):
+        for asiento in self.asientos:
+            if type(asiento) == type(self.asientos):
+                i+=1
+        
+        return i
+    
+    def verificarIntegridad(self):
+        for asiento in self.asientos:
+            if type(asiento) == type(self.asientos):
+                if (Asiento.registro == self.registro) and (Motor.registro == self.registro):
+                    return "Auto original"
+                else:
+                    return "Las piezas no son originales"
+                
+            
+
+
+
+
+    
